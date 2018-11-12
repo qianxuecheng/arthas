@@ -412,7 +412,7 @@ abstract public class ThreadUtil {
                 valueField.setAccessible(true);
                 Object threadLocalValue = valueField.get(entry);
                 if (threadLocalValue != null &&
-                        "com.taobao.eagleeye.RpcContext_inner".equals(threadLocalValue.getClass().getName())) {
+                        "com.qunhe.hunter.data.Span".equals(threadLocalValue.getClass().getName())) {
                     // finally we got the chance to access trace id
                     Method getTraceIdMethod = threadLocalValue.getClass().getMethod("getTraceId");
                     getTraceIdMethod.setAccessible(true);
